@@ -18,6 +18,7 @@ user2 = User.create(username:"Hope", password: "pass456", image_url: "https://ww
 
 room1 = Room.create(name: "#grime")
 room2 = Room.create(name: "#techno")
+general = Room.create(name: "#general")
 
 user_room1 = UserRoom.create(room: room1, user: user1)
 user_room2 = UserRoom.create(room: room1, user: user2)
@@ -27,3 +28,5 @@ user_room4 = UserRoom.create(room: room2, user: user1)
 message1 = Message.create(body: "hi I love grime so much", room: room1, user: user2)
 message2 = Message.create(body: "me too!",room: room1, user: user1)
 message3 = Message.create(body: "when did you first learn about the genre?", room: room1, user: user1 )
+
+general.users.push(User.all)
