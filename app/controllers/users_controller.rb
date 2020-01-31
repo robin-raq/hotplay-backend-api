@@ -30,6 +30,5 @@ class UsersController < ApplicationController
         current_user = User.find(user_id)
         render json: current_user
     end
- 
 
 end
