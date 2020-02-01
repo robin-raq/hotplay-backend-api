@@ -20,7 +20,9 @@ class RoomsController < ApplicationController
             if room.valid?
                 #add user to that room
                 user = User.find(params[:user][:id])
-                room.users.push(user)
+                # room.users.push(user)
+                UserRoom.create(room: room, user: user)
+                #check to see if the UserRoom is valid
                 render json: room, include: "**"
             else
                 render json:{errors: room.errors.full_messages}, status: 422
