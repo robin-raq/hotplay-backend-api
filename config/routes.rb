@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   
   post '/login', to: 'auth#login'
 
-  mount ActionCable.server =>'./cable'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
+ 
+  #route to initiate WebSocket connection
+  # root to: 'messages#root'
+  mount ActionCable.server => '/cable'
 end
