@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   
   post '/login', to: 'auth#login'
 
- 
   #route to initiate WebSocket connection
   # root to: 'messages#root'
   mount ActionCable.server => '/cable'

@@ -4,6 +4,11 @@ class RoomsController < ApplicationController
         render json: rooms, include: "**"
     end
 
+    def show
+        room = Room.find(params[:id])
+        render json: room, include: "**"
+    end
+
     def create
         #check to see if room already exist
         if Room.find_by(name: params[:name]) === nil
