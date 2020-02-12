@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+gem 'figaro'
+
 # https://github.com/jwt/ruby-jwt
 gem 'jwt'
 

@@ -18,7 +18,9 @@ user2 = User.create(username:"Hope", password: "pass456", image_url: "https://ww
 
 room1 = Room.create(name: "#grime")
 room2 = Room.create(name: "#techno")
-general = Room.create(name: "#general")
+room2 = Room.create(name: "#afrobeats")
+trending = Room.create(name: "#trending")
+
 
 user_room1 = UserRoom.create(room: room1, user: user1)
 user_room2 = UserRoom.create(room: room1, user: user2)

@@ -10,6 +10,7 @@ class RoomsController < ApplicationController
     end
 
     def create
+        # byebug
         #check to see if room already exist
         if Room.find_by(name: params[:name]) === nil
             #if it doesn't exist create a new room
