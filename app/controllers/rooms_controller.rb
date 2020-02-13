@@ -27,6 +27,7 @@ class RoomsController < ApplicationController
                 #add user to that room
                 
                 user = User.find(params[:user][:id])
+                welcome = Message.create(body:"joined this room", room: room, user: user)
                 
                 UserRoom.create(room: room, user: user)
                 # room.users.push(user)  alternatively

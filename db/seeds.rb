@@ -23,12 +23,22 @@ trending = Room.create(name: "#trending")
 
 
 user_room1 = UserRoom.create(room: room1, user: user1)
+welcome1 = Message.create(body:"joined this room", room: room1, user: user1)
+
 user_room2 = UserRoom.create(room: room1, user: user2)
+welcome2 = Message.create(body:"joined this room", room: room1, user: user2)
+
 user_room3 = UserRoom.create(room: room2, user: user2)
+welcome3 = Message.create(body:"joined this room", room: room2, user: user2)
+
 user_room4 = UserRoom.create(room: room2, user: user1)
+welcome4 = Message.create(body:"joined this room", room: room2, user: user1)
+
+trending.users.push(User.all)
+welcome5 = Message.create(body:"joined this room", room: trending, user: user1)
+welcome6 = Message.create(body:"joined this room", room: trending, user: user2)
+
 
 message1 = Message.create(body: "hi I love grime so much", room: room1, user: user2)
 message2 = Message.create(body: "me too!",room: room1, user: user1)
 message3 = Message.create(body: "when did you first learn about the genre?", room: room1, user: user1 )
-
-general.users.push(User.all)
