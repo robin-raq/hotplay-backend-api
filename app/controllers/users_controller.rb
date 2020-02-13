@@ -13,10 +13,14 @@ class UsersController < ApplicationController
     
     def create
         user = User.create(user_params)
+        
         #debugger 
         if user.valid?
-            room = Room.find(3)
+            room = Room.find_by(name:"#trending")
             room.users.push(user)
+            welcome = Message.create(body:"joined HotPlay", room: room, user: user)
+            
+
             payload = { user_id: user.id }
             token = JWT.encode(payload, ENV['jwt_token'], 'HS256')
             render json: {token: token, user: user}
