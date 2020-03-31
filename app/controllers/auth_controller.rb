@@ -10,7 +10,7 @@ class AuthController < ApplicationController
         #if all is well, send back the user
         if is_authenticated
             payload = {user_id: user.id}
-            token = JWT.encode(payload, ENV['jwt_token'],'HS256')
+            token = JWT.encode(payload, 'chatitup','HS256')
 
             render json: {token: token, user: user}
         else

@@ -22,7 +22,7 @@ class UsersController < ApplicationController
             
 
             payload = { user_id: user.id }
-            token = JWT.encode(payload, ENV['jwt_token'], 'HS256')
+            token = JWT.encode(payload, 'chatitup', 'HS256')
             render json: {token: token, user: user}
         else
             render json:{errors: user.errors.full_messages}, status: 422
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     def profile
         # byebug
         token = request.headers['Authorization'].split(" ")[1]
-        decoded_token = JWT.decode( token, ENV['jwt_token'], true, {algorithm: 'HS256'})
+        decoded_token = JWT.decode( token, 'chatitup', true, {algorithm: 'HS256'})
         user_id = decoded_token[0]["user_id"]
         current_user = User.find(user_id)
         render json: current_user
